@@ -2,8 +2,99 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* White background */
+    --foreground: 271.8 53.7% 10.2%; /* Dark purple text (near black) */
+    --card: 0 0% 100%; /* White cards */
+    --card-foreground: 271.8 53.7% 10.2%; /* Dark purple text */
+    --popover: 0 0% 100%; /* White popover background */
+    --popover-foreground: 271.8 53.7% 10.2%; /* Dark purple popover text */
+
+    /* Primary color: Bright Purple */
+    --primary: 270 91.4% 55%; /* Bright purple */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
+
+    /* Secondary and Muted: Light purple */
+    --secondary: 270 60% 92%; /* Light purple background for secondary */
+    --secondary-foreground: 271.8 53.7% 10.2%; /* Dark purple for secondary text */
+
+    --muted: 270 60% 92%; /* Muted light purple */
+    --muted-foreground: 273.4 20% 46%; /* Medium-dark purple for muted text */
+
+    --accent: 270 60% 92%; /* Light purple accent */
+    --accent-foreground: 271.8 53.7% 10.2%; /* Dark purple text on accent */
+
+    /* Destructive actions: Red */
+    --destructive: 0 84.2% 60.2%; /* Red for destructive actions */
+    --destructive-foreground: 0 0% 100%; /* White text on red */
+
+    /* Borders, Input, and Rings: Light purple shades */
+    --border: 270 33% 85%; /* Light purple for borders */
+    --input: 270 33% 85%; /* Light purple for input fields */
+    --ring: 270 91.4% 55%; /* Bright purple ring for focus */
+
+    --radius: 0.5rem; /* Border radius */
+  }
+
+  .dark {
+    --background: 271.8 53.7% 10.2%; /* Dark purple background */
+    --foreground: 0 0% 100%; /* White text in dark mode */
+
+    --card: 271.8 53.7% 10.2%; /* Dark purple for cards */
+    --card-foreground: 0 0% 100%; /* White text on dark cards */
+
+    --popover: 271.8 53.7% 10.2%; /* Dark purple popover */
+    --popover-foreground: 0 0% 100%; /* White text on dark popovers */
+
+    /* Primary color: Bright Purple in dark mode */
+    --primary: 270 91.4% 55%; /* Bright purple */
+    --primary-foreground: 0 0% 100%; /* White text on primary background */
+
+    /* Secondary and Muted: Dark purple */
+    --secondary: 270 33% 17.5%; /* Dark purple for secondary */
+    --secondary-foreground: 0 0% 100%; /* White text on secondary */
+
+    --muted: 270 33% 17.5%; /* Dark muted purple */
+    --muted-foreground: 273.4 20% 65%; /* Light purple for muted text */
+
+    --accent: 270 33% 17.5%; /* Dark purple accent */
+    --accent-foreground: 0 0% 100%; /* White text on accent */
+
+    --destructive: 0 62.8% 30.6%; /* Dark red for destructive actions */
+    --destructive-foreground: 0 0% 100%; /* White text on red */
+
+    --border: 270 33% 17.5%; /* Dark purple for borders */
+    --input: 270 33% 17.5%; /* Dark purple for input fields */
+    --ring: 270 91.4% 55%; /* Bright purple ring for focus in dark mode */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+h1 {
+  @apply text-5xl font-extrabold;
+}
+
+h2 {
+  @apply text-3xl font-bold;
+}
+
+h3 {
+  @apply text-2xl font-bold;
+}
+
+h4 {
+  @apply text-xl font-bold;
+}
+
+h5 {
+  @apply text-lg font-bold;
 }
