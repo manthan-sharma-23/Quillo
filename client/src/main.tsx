@@ -12,6 +12,8 @@ import { TRPC_ENDPOINT } from "@/global/config";
 
 import Cookies from "universal-cookie";
 import { ACCESS_TOKEN_COOKIE } from "./global/cookies";
+import { Toaster } from "sonner";
+
 const router = createRouter({ routeTree });
 
 const cookies = new Cookies();
@@ -41,6 +43,7 @@ if (!rootElement.innerHTML) {
     <StrictMode>
       <trpc.Provider client={trpcClient} queryClient={queryClient}>
         <QueryClientProvider client={queryClient}>
+          <Toaster className="shadow"/>
           <RouterProvider router={router} />
         </QueryClientProvider>
       </trpc.Provider>
