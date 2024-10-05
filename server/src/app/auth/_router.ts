@@ -5,7 +5,7 @@ import { ZSigninInput } from "./signin.schema";
 import { SignupHandler } from "./signup.handler";
 import { ZSignupInput } from "./signup.schema";
 
-export const userRouter = router({
+export const authRouter = router({
   signin: publicProcedure.input(ZSigninInput).mutation(SignInHandler),
   signup: publicProcedure.input(ZSignupInput).mutation(SignupHandler),
 });

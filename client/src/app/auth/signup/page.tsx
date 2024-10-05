@@ -17,7 +17,7 @@ export const SignUpPage = () => {
 
   const cookies = useCookies();
 
-  const signup = trpc.user.signup.useMutation({
+  const signup = trpc.auth.signup.useMutation({
     onSuccess: (data) => {
       toast.success("User signed up successfully !", { richColors: true });
 

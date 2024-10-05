@@ -14,7 +14,7 @@ export const SignInPage = () => {
   const [password, setPassword] = useState("");
   const cookies = useCookies();
 
-  const signin = trpc.user.signin.useMutation({
+  const signin = trpc.auth.signin.useMutation({
     onSuccess: (data) => {
       toast.success("User signed up successfully !", { richColors: true });
 

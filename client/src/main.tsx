@@ -13,6 +13,7 @@ import { TRPC_ENDPOINT } from "@/global/config";
 import Cookies from "universal-cookie";
 import { ACCESS_TOKEN_COOKIE } from "./global/cookies";
 import { Toaster } from "sonner";
+import { RecoilRoot } from "recoil";
 
 const router = createRouter({ routeTree });
 
@@ -41,12 +42,14 @@ if (!rootElement.innerHTML) {
   const root = createRoot(rootElement);
   root.render(
     <StrictMode>
-      <trpc.Provider client={trpcClient} queryClient={queryClient}>
-        <QueryClientProvider client={queryClient}>
-          <Toaster className="shadow"/>
-          <RouterProvider router={router} />
-        </QueryClientProvider>
-      </trpc.Provider>
+      <RecoilRoot>
+        <trpc.Provider client={trpcClient} queryClient={queryClient}>
+          <QueryClientProvider client={queryClient}>
+            <Toaster className="shadow" />
+            <RouterProvider router={router} />
+          </QueryClientProvider>
+        </trpc.Provider>
+      </RecoilRoot>
     </StrictMode>
   );
 }
