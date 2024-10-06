@@ -1,17 +1,14 @@
 import {
   Activity,
-  Book,
-  FileText,
   Group,
   Inbox,
   Library,
   Settings,
   Share,
-  Star,
   User,
   Zap,
 } from "lucide-react";
-import Logo from "/logo/dark_logo.svg";
+import Logo from "/logo/light_logo.svg";
 import SidebarItem from "./sidebar-item";
 import { useRouterState } from "@tanstack/react-router";
 import SidebarSection from "./sidebar-section";
@@ -48,7 +45,7 @@ const Sidebar = () => {
         <img className="h-[75%]" src={Logo} alt="logo" />
       </div>
       <div className="h-[90%] w-full flex flex-col">
-        <SidebarSection title="">
+        <SidebarSection>
           {links.map((link) => (
             <SidebarItem
               key={link.link}

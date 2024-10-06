@@ -1,5 +1,5 @@
 import { Input } from "@/components/ui/input";
-import Logo from "/logo/dark_logo.svg";
+import Logo from "/logo/light_logo.svg";
 import { Label } from "@/components/ui/label";
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
