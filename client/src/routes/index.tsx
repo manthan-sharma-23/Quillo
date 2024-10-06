@@ -1,11 +1,13 @@
-import { userAtom } from "@/store/atoms/user";
-import { createFileRoute } from "@tanstack/react-router";
-import { useRecoilValue } from "recoil";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
   component: () => {
-    const user = useRecoilValue(userAtom);
+    const navigate = useNavigate();
 
-    return <div>{JSON.stringify(user)}</div>;
+    navigate({
+      to: "/explore",
+    });
+
+    return null;
   },
 });
