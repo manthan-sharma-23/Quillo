@@ -14,7 +14,7 @@ const SidebarItem = ({ Icon, title, link, active }: SidebarItemProps) => {
     <Link to={link} className="w-full">
       <button
         className={cx(
-          "flex items-center w-full py-2.5 px-5 rounded-2xl transition duration-200 ease-in-out mb-1",
+          "flex items-center w-full py-3 px-5 rounded-2xl transition duration-200 ease-in-out mb-1",
           active
             ? "bg-primary text-white"
             : "hover:bg-primary/10 text-foreground"
