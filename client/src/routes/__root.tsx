@@ -15,14 +15,14 @@ export const Route = createRootRoute({
     const user = useRecoilValue(userAtom);
 
     if (
-      router.location.pathname === "/login" ||
+      router.location.pathname === "/signin" ||
       router.location.pathname === "/signup"
     ) {
       return <Outlet />;
     }
 
     if (!cookies.get("hr-at")) {
-      window.location.href = `/login?next=${router.location.pathname}`;
+      window.location.href = `/signin`;
       return null;
     }
 

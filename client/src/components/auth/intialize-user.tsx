@@ -16,7 +16,7 @@ const InitializeUser = () => {
       toast.error(error.message);
       cookies.remove(ACCESS_TOKEN_COOKIE);
       setTimeout(() => {
-        window.location.href = "/login";
+        window.location.href = "/signin";
       }, 1000);
     },
     onSuccess: async (data) => {
@@ -27,7 +27,7 @@ const InitializeUser = () => {
   useEffect(() => {
     const token = cookies.get(ACCESS_TOKEN_COOKIE);
     if (!token) {
-      window.location.href = "/login";
+      window.location.href = "/signin";
     } else {
       currentUser.mutate();
     }

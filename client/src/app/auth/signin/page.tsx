@@ -1,5 +1,5 @@
 import { Input } from "@/components/ui/input";
-import Logo from "/logo/logo.png";
+import Logo from "/logo/dark_logo.svg";
 import { Label } from "@/components/ui/label";
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
@@ -16,7 +16,7 @@ export const SignInPage = () => {
 
   const signin = trpc.auth.signin.useMutation({
     onSuccess: (data) => {
-      toast.success("User signed up successfully !", { richColors: true });
+      toast.success("User signed in successfully!", { richColors: true });
 
       cookies.set(ACCESS_TOKEN_COOKIE, data);
 
@@ -35,20 +35,22 @@ export const SignInPage = () => {
   };
 
   return (
-    <div className="h-screen w-screen flex bg-background ">
-      <div className="w-2/5 h-full bg-muted font-poppins flex flex-col items-center justify-center gap-3">
-        <img src={Logo} alt="logo" className="h-36 w-36" />
-        <h1 className="font-poppins">Quillo</h1>
-        <h6>A new chapter in e-reading</h6>
+    <div className="flex flex-col lg:flex-row h-screen w-screen bg-background">
+      <div className="lg:w-2/5 w-full h-full font-poppins flex flex-col items-center justify-center bg-muted p-6 lg:p-0">
+        <img src={Logo} alt="logo" className="w-1/2 max-w-[200px]" />
+        <h6 className="font-poppins text-center mt-4 lg:mt-0">
+          A new chapter in
+          <span className="text-primary mx-1">e-reading</span>
+        </h6>
       </div>
-      <div className="w-3/5 h-full flex justify-center items-center">
-        <div className="w-1/2 h-auto flex flex-col items-start justify-center gap-3">
-          <h2 className="font-poppins">Sign in</h2>
-          <p className="font-poppins text-muted-foreground text-sm">
+      <div className="lg:w-3/5 w-full h-full flex justify-center items-center p-6 lg:p-0">
+        <div className="w-full lg:w-1/2 flex flex-col items-start justify-center gap-3">
+          <h2 className="font-poppins text-3xl lg:text-4xl">Sign in</h2>
+          <p className="font-poppins text-muted-foreground text-sm lg:text-base">
             Unlock your ultimate reading experience. Connect, collaborate, and
             dive deeper into every book with Quillo.
           </p>
-          <form onSubmit={handleSubmit} className="grid gap-4 w-full">
+          <form onSubmit={handleSubmit} className="grid gap-4 w-full mt-4">
             <div className="grid gap-2">
               <Label htmlFor="email">Email</Label>
               <Input
@@ -83,7 +85,7 @@ export const SignInPage = () => {
             <Button type="submit" className="w-full">
               Sign in
             </Button>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground text-center lg:text-left">
               Don’t have an account?
               <Link
                 to="/signup"
